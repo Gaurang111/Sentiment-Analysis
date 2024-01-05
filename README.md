@@ -1,16 +1,5 @@
 # Sentiment-Analysis
 
-## Principles of Big Data Management
-**COMP-SCI 5540 [Spring Semester 2023]**
-
-### Project Title: Sentiment Analysis Using Big Data
-
-**Group Members:**
-- Gaurang Solanki
-- Mohan Sai Singu 
-- Supriya Reddy Jagganolla 
-- Bhavana Gattuboyena 
-
 ### Abstract
 Sentiment Analysis is a technique that utilizes machine learning and natural language processing (NLP) to analyze and classify subjective data. This documentation provides an overview of a sentiment analysis system that employs big data to analyze and classify data. The document covers the project goals, objectives, scope, limitations, constraints, feasibility study, work breakdown structure, system requirement specifications, hardware requirements, system design, and architecture.
 
