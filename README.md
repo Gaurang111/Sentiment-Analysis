@@ -24,13 +24,6 @@ The feasibility study involves assessing data availability and technical feasibi
 - **Availability of Data:** Critical to sentiment analysis, data must be sourced from Twitter.
 - **Technical Feasibility:** The system requires big data technologies like Hadoop and Spark for processing large volumes of data in real time.
 
-### Work Breakdown Structure
-The project breakdown structure:
-- Mohan Singu: Requirements Gathering
-- Supriya Reddy and Bhavana: Data Collection (using Tweepy for Twitter API V2.0)
-- Gaurang Solanki and Mohan Singu: Data Cleaning and Pre-processing (using Apache Spark and PySpark)
-- Gaurang Solanki: Data Visualization (using Plotly)
-
 ### Hardware Requirements
 The hardware requirements for the sentiment analysis system:
 - A system with a minimum of 4GB RAM
@@ -45,13 +38,61 @@ The system consists of the following components:
 4. Data Visualization - Plotly
 5. Sentiment Analysis – VARER
 
+<img src="images/19.png" width=800>
+
 ### Code
-Import necessary libraries and create client objects for Hadoop distributed file system (HDFS) and Twitter API. The code retrieves tweets from Twitter based on specified queries and stores them in JSON files. Data cleaning, pre-processing, and visualization are performed using PySpark, Plotly, and Pandas.
+Import required libraries such as InsecureClient from hdfs, tweepy, JSONEncoder, SparkSession, pandas, 
+dump, dumps, load, datetime, explode, col, pyspark, plotly.express, and warnings. then create client 
+objects for Hadoop distributed file system (HDFS) and Twitter API using the InsecureClient and 
+tweepy.Client, respectively.
+The code then defines a Twitter query for retrieving recent tweets related to #WWEBacklash or 
+#WWEBacklash or #wwebacklash or #WWEBACKLASH that are in English and are not retweets. It then 
+retrieves the tweets using the tweepy.Paginator and stores them in a list called testList. The search 
+parameters include tweet_fields such as id, author_id, text, attachments, context_annotations, 
+conversation_id, edit_controls, entities, possibly_sensitive, public_metrics, referenced_tweets, withheld, 
+created_at, and geo, and max_results parameter is set to 100.
+The code also defines two lists startTimeList and endTimeList, which define the start and end times for 
+retrieving the tweets. For each time interval defined in these lists, the code retrieves the tweets by 
+calling the tweepy.Paginator again and appends them to the testList. Finally, save the list of tweets in a 
+JSON file named WWEBacklash1.json using the JSON.dump function. The JSON file is saved in the 
+specified file path C:\\Users\\likhi\\Downloads\\Gorang\\.
+Then, Change the tweet hashtag from #WWEBacklash to #Coronation and #KentuckyDerby as these 
+hashtags are trending at this point.
+Also, we did the same thing to extract tweets related to Car Companies.
+
+- Data will stored within respective folders
+
+<img src="images/7.png" width=800>
+  
+- Tweets from car companies within respective folders
+
+<img src="images/8.jpg" width=800>
 
 ### Analysis and Visualization
 - Most Liked Tweets for Coronation, WWE Backlash, Kentucky Derby
+
+<img src="images/10.png" width=800>
+<img src="images/11.png" width=800>
+<img src="images/12.png" width=800>
+
 - Number of Sensitive Tweets (Controversial)
+
+<img src="images/13.png" width=800>
+<img src="images/14.png" width=800>
+<img src="images/15.png" width=800>
+
 - Analysis of tweets related to different car companies (number of tweets, speed, safety)
+  - Number of tweets posted by different car companies
+  
+<img src="images/16.png" width=800>
+
+  - Speed of cars related tweets by different companies
+
+<img src="images/17.png" width=800>
+
+  - Safety of the cars related tweets
+
+<img src="images/18.png" width=800>
 
 ### Future Scope
 The pre-processed data can be used for classification problems and Natural Language Processing (NLP). Classification involves assigning labels based on features, while NLP tasks include text classification and language translation.
